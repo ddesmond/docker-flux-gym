@@ -1,0 +1,24 @@
+services:
+
+  fluxgym:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: docker-fluxgym
+    container_name: fluxgym
+    ports:
+      - 7860:7860
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./data:/app/fluxgym
+    stop_signal: SIGKILL
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: all
+            capabilities: [gpu]
+    restart: unless-stopped
