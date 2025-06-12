@@ -7,10 +7,8 @@ ENV TZ=Europe/Zagreb
 RUN apt-get update -y && apt-get install -y \
     git \
     build-essential \
-    curl
+    curl wget
 
-COPY /setup /setup
-RUN chmod -R 777 /setup && chmod +x /setup/*.sh && bash /setup/setup.sh
 
 # ENV
 ENV HOME=/root \
@@ -29,6 +27,8 @@ RUN pyenv install $PYTHON_VERSION && \
     pip install --no-cache-dir --upgrade pip setuptools wheel
 
 
+COPY /setup /setup
+RUN chmod -R 777 /setup && chmod +x /setup/*.sh && bash /setup/setup.sh
 
 
 WORKDIR /app
