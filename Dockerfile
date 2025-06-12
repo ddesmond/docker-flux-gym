@@ -1,6 +1,8 @@
 # Base image with CUDA 12.2 - ubuntu
 FROM nvidia/cuda:12.2.2-base-ubuntu22.04
 
+ENV TZ=Europe/Zagreb
+
 # Install pip if not already installed
 RUN apt-get update -y && apt-get install -y \
     python3-pip \
@@ -19,14 +21,13 @@ ENV HOME=/root \
 RUN curl https://pyenv.run | bash
 ENV PATH=$HOME/.pyenv/shims:$HOME/.pyenv/bin:$PATH
 
-ENV PYTHON_VERSION=3.11.13
+ENV PYTHON_VERSION=3.11
 
 # Python
 RUN pyenv install $PYTHON_VERSION && \
     pyenv global $PYTHON_VERSION && \
     pyenv rehash && \
-    pip install --no-cache-dir --upgrade pip setuptools wheel \
-    datasets huggingface-hub "protobuf<4" "click<8.1"
+    pip install --no-cache-dir --upgrade pip setuptools wheel
 
 
 
