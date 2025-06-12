@@ -10,7 +10,7 @@ RUN apt-get update -y && apt-get install -y \
 
 COPY /setup /setup
 
-RUN chmod -R /setup && chmod +x /setup/*.sh && bash /setup/setup.sh
+RUN chmod -R 777 /setup && chmod +x /setup/*.sh && bash /setup/setup.sh
 
 
 EXPOSE 7860
