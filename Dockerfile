@@ -9,8 +9,27 @@ RUN apt-get update -y && apt-get install -y \
     build-essential
 
 COPY /setup /setup
-
 RUN chmod -R 777 /setup && chmod +x /setup/*.sh && bash /setup/setup.sh
+
+# ENV
+ENV HOME=/root \
+    PATH=/root/.local/bin:$PATH
+
+# Pyenv
+RUN curl https://pyenv.run | bash
+ENV PATH=$HOME/.pyenv/shims:$HOME/.pyenv/bin:$PATH
+
+ENV PYTHON_VERSION=3.11.13
+
+# Python
+RUN pyenv install $PYTHON_VERSION && \
+    pyenv global $PYTHON_VERSION && \
+    pyenv rehash && \
+    pip install --no-cache-dir --upgrade pip setuptools wheel \
+    datasets huggingface-hub "protobuf<4" "click<8.1"
+
+
+
 
 WORKDIR /app
 RUN bash /setup/install.sh
@@ -18,6 +37,8 @@ RUN bash /setup/install.sh
 
 EXPOSE 7860
 ENV GRADIO_SERVER_NAME="0.0.0.0"
+ENV LANG=C.UTF-8
+
 
 WORKDIR /setup
-CMD ["bash", "/setup/run.sh"]
+CMD ["bash", "-l"]
