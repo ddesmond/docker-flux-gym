@@ -5,10 +5,9 @@ ENV TZ=Europe/Zagreb
 
 # Install pip if not already installed
 RUN apt-get update -y && apt-get install -y \
-    python3-pip \
-    python3-dev \
     git \
-    build-essential
+    build-essential \
+    curl
 
 COPY /setup /setup
 RUN chmod -R 777 /setup && chmod +x /setup/*.sh && bash /setup/setup.sh
