@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: docker-fluxgym
+    # image: d3smond/docker-fluxgym
     container_name: fluxgym
     ports:
       - 7860:7860
