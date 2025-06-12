@@ -19,5 +19,5 @@ RUN bash /setup/install.sh
 EXPOSE 7860
 ENV GRADIO_SERVER_NAME="0.0.0.0"
 
-
+WORKDIR /setup
 CMD ["bash", "/setup/run.sh"]
