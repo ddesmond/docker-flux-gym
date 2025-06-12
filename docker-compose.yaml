@@ -22,3 +22,4 @@ services:
             count: all
             capabilities: [gpu]
     restart: unless-stopped
+    command: [ "/bin/bash", "-c", "--", "while true; do sleep 30; done;" ]
