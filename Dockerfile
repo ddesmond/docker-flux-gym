@@ -2,6 +2,8 @@
 FROM nvidia/cuda:12.2.2-base-ubuntu22.04
 
 ENV TZ=Europe/Zagreb
+ENV DEBIAN_FRONTEND=noninteractive
+
 
 # Install pip if not already installed
 RUN apt-get update -y && apt-get install -y \
