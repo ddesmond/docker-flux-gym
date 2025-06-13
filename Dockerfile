@@ -10,6 +10,10 @@ RUN apt-get update -y && apt-get install -y \
     curl wget
 
 
+COPY /setup/deps.sh /setup/deps.sh
+RUN chmod +x /setup/*.sh && \
+    bash /setup/deps.sh
+
 # ENV
 ENV HOME=/root \
     PATH=/root/.local/bin:$PATH
