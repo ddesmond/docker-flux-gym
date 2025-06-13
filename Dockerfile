@@ -47,4 +47,4 @@ ENV LANG=C.UTF-8
 
 
 WORKDIR /setup
-CMD ["bash", "-l"]
+CMD ["bash", "./run.sh"]
