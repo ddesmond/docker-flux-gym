@@ -1,7 +1,7 @@
 #!/bin/bash
 echo $PWD
 
-pyenv virtualenv $$PYTHON_VERSION flux-sd
+pyenv virtualenv $PYTHON_VERSION flux-sd
 pyenv local flux-sd
 
 echo "Pulling fresh SD"

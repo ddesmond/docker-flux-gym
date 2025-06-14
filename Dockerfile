@@ -36,9 +36,8 @@ RUN pyenv install $PYTHON_VERSION && \
     pyenv rehash && \
     pip install --no-cache-dir --upgrade pip setuptools wheel
 
-
 COPY /setup /setup
-RUN chmod -R 777 /setup && chmod +x /setup/*.sh
+RUN chmod -R 777 /setup && chmod +x /setup/*.sh && bash /setup/pyenv.sh
 
 WORKDIR /app
 RUN which python3

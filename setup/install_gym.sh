@@ -1,7 +1,7 @@
 #!/bin/bash
 echo $PWD
 
-pyenv virtualenv $$PYTHON_VERSION flux-gym
+pyenv virtualenv $PYTHON_VERSION flux-gym
 pyenv local flux-gym
 
 which python
