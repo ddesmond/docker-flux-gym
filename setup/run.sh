@@ -12,4 +12,5 @@ export GRADIO_SERVER_NAME="0.0.0.0"
 
 echo "___ Starting Fluxgym ___"
 cd /app/fluxgym
-python3 app.py
+pyenv activate flux-gym
+python app.py
