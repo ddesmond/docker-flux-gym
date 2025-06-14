@@ -2,7 +2,6 @@
 echo $PWD
 
 cd /app/fluxgym
-pyenv activate flux
 
 echo "Pulling fresh SD"
 
