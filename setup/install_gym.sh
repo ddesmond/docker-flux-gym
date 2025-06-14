@@ -1,8 +1,9 @@
 #!/bin/bash
 echo $PWD
 
-pyenv virtualenv $PYTHON_VERSION flux-gym
-pyenv local flux-gym
+pyenv virtualenv $PYTHON_VERSION flux
+pyenv init flux
+pyenv activate flux
 
 which python
 
