@@ -37,13 +37,9 @@ apt-get install -y --no-install-recommends 	\
   libxslt-dev 		libyaml-dev \
   make 		patch 		unzip \
   xz-utils 		zlib1g-dev \
-  libgl1-mesa-glx
-
-
-apt-get update -y
-apt-get install -y --no-install-recommends 	\
+  libgl1-mesa-glx \
 	libbluetooth-dev 	\
   tk-dev \
   uuid-dev
 
-
+updatedb
