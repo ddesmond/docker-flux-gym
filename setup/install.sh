@@ -23,7 +23,9 @@ echo "fluxgym requirements installed successfully."
 pip install --pre torch==2.4 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
 echo "PyTorch installed successfully."
-pip install jupyterlab \n\necho "Downloading models..."
+pip install jupyterlab
+
+echo "Downloading models..."
 
 wget -O /app/fluxgym/models/unet/flux1-dev.sft https://huggingface.co/cocktailpeanut/xulf-dev/resolve/main/flux1-dev.sft?download=true
 wget -O /app/fluxgym/models/unet/flux1-schnell.safetensors https://huggingface.co/cocktailpeanut/xulf-schnell/resolve/main/flux1-schnell.safetensors?download=true
@@ -33,6 +35,6 @@ wget -O /app/fluxgym/models/vae/ae.sft https://huggingface.co/cocktailpeanut/xul
 echo "Models downloaded successfully."
 
 export GRADIO_SERVER_NAME="0.0.0.0"
-#nohup bash -c "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin='*' & python /app/fluxgym/app.py" > combined.log 2>&1
+nohup bash -c "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin='*' & python /app/fluxgym/app.py" > combined.log 2>&1
 #python --version > /app/start.sh && chmod +x /app/start.sh # buildkit
 
