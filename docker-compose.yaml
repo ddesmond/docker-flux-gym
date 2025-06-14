@@ -23,4 +23,5 @@ services:
             capabilities: [gpu]
     restart: unless-stopped
     #command: [ "/bin/bash", "-c", "--", "while true; do sleep 30; done;" ]
+
     command: [ "/bin/bash", "/setup/run.sh" ]
