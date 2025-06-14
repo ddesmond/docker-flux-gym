@@ -3,25 +3,15 @@ echo $PWD
 
 #!/bin/bash
 
-dnf update -y
-dnf upgrade --refresh -y
+apt update -y
+apt upgrade --refresh -y
 
-dnf install -y dnf-plugins-core
-dnf config-manager --set-enabled crb
-dnf install -y epel-release
+apt update -y
 
-dnf update -y
-
-dnf install -y \
+apt install -y \
     nano zip \
     git git-lfs wget curl mlocate --allowerasing
 
-dnf install  -y \
-  make gcc patch zlib-devel bzip2 bzip2-devel \
-  readline-devel sqlite sqlite-devel openssl-devel \
-  tk-devel libffi-devel xz-devel libuuid-devel gdbm-libs libnsl2 \
-  mesa-libGL \
-  g++
 
 
 /usr/bin/git lfs install
