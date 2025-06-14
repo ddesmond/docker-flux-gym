@@ -36,7 +36,8 @@ apt-get install -y --no-install-recommends 	\
   libtool 		libwebp-dev 		libxml2-dev \
   libxslt-dev 		libyaml-dev \
   make 		patch 		unzip \
-  xz-utils 		zlib1g-dev
+  xz-utils 		zlib1g-dev \
+  libgl1-mesa-glx
 
 
 apt-get update -y
