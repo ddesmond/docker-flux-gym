@@ -5,8 +5,13 @@ echo $PWD
 
 # check models folder
 
+if [ -f "/data/models/clip/clip_l.safetensors" ]; then
+  echo "Models already downloaded"
+else
+  bash /setup/download_models.sh
+fi
 
-bash /setup/download_models.sh
+
 
 
 export GRADIO_SERVER_NAME="0.0.0.0"
