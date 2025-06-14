@@ -35,6 +35,6 @@ wget -O /app/fluxgym/models/vae/ae.sft https://huggingface.co/cocktailpeanut/xul
 echo "Models downloaded successfully."
 
 export GRADIO_SERVER_NAME="0.0.0.0"
-nohup bash -c "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin='*' & python /app/fluxgym/app.py" > combined.log 2>&1
+#nohup bash -c "jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password='' --NotebookApp.allow_origin='*' & python /app/fluxgym/app.py" > combined.log 2>&1
 #python --version > /app/start.sh && chmod +x /app/start.sh # buildkit
 
