@@ -4,14 +4,11 @@ echo $PWD
 #!/bin/bash
 
 apt update -y
-apt upgrade --refresh -y
 
-apt update -y
 
 apt install -y \
     nano zip \
     git git-lfs wget curl mlocate --allowerasing
-
 
 
 /usr/bin/git lfs install
