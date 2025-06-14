@@ -11,6 +11,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
+      - ./data/models:/app/fluxgym/models
       - ./data:/data
     stop_signal: SIGKILL
     tty: true

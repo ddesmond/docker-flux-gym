@@ -3,6 +3,11 @@ echo $PWD
 # add custom envs or pre-start code/hooks here
 
 
+# check models folder
+
+
+bash /setup/download_models.sh
+
 
 export GRADIO_SERVER_NAME="0.0.0.0"
 
