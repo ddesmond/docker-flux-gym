@@ -1,6 +1,9 @@
 #!/bin/bash
 echo $PWD
 
+pyenv virtualenv $$PYTHON_VERSION flux-sd
+pyenv local flux-sd
+
 echo "Pulling fresh SD"
 
 git clone -b sd3 https://github.com/kohya-ss/sd-scripts /app/fluxgym/sd-scripts
