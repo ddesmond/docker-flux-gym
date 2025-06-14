@@ -34,10 +34,10 @@ RUN pyenv install $PYTHON_VERSION && \
 
 
 COPY /setup /setup
-RUN chmod -R 777 /setup && chmod +x /setup/*.sh && bash /setup/setup.sh
-
+RUN chmod -R 777 /setup && chmod +x /setup/*.sh
 
 WORKDIR /app
+RUN which python3
 RUN bash /setup/install.sh
 
 
