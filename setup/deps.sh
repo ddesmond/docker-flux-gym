@@ -8,7 +8,7 @@ apt update -y
 
 apt install -y \
     nano zip \
-    git git-lfs wget curl mlocate --allowerasing
+    git git-lfs wget curl mlocate --no-install-recommends
 
 
 /usr/bin/git lfs install
